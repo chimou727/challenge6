@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Weather app</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="assets\images\logo.svg" alt="logo">
+    <div class="units-menu">
+      <button id="btn-units" type="button" aria-expanded="false" aria-controls="">
+        <img src="assets\images\icon-units.svg" alt="icon">
+        <span>Units</span>
+        <img src="assets\images\icon-dropdown.svg" alt="icon">
+      </button>
+      <div id="units-menu-panel" class="units-menu__panel" hidden>
+        <p>Switch to Imperial</p>
+
+        <fieldset>
+          <legend>Temperature</legend>
+          <label>
+            <input type="radio" name="temperature-unit" value="celsius" checked>
+            Celsius (°C)
+          </label>
+          <label>
+            <input type="radio" name="temperature-unit" value="fahrenheit">
+            Fahrenheit (°F)
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Wind Speed</legend>
+          <label>
+            <input type="radio" name="wind-unit" value="kmh" checked>
+            km/h
+          </label>
+          <label>
+            <input type="radio" name="wind-unit" value="mph">
+            mph
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Precipitation</legend>
+          <label>
+            <input type="radio" name="precipitation-unit" value="millimeters" checked>
+            Millimeters (mm)
+          </label>
+          <label>
+            <input type="radio" name="precipitation-unit" value="inches">
+            Inches (in)
+          </label>
+        </fieldset>
+      </aside>
+    </div>
+    
+  </header>
+  
+  <h1>How's the sky looking today?</h1>
+
+  <div class="search-group">
+    <div class="search-container">
+    <img src="assets\images\icon-search.svg" alt="icon">
+    <input type="text" id="city-input" placeholder="Search for a city" >
+   </div>
+   <button id="btn-search"> Search</button>
+</div>
+  <div class="weather-layout">
+    <main class="weather-main">
+      <div class="bg-today">
+        <img src="assets\images\bg-today-large.svg" alt="">
+        <div class="img-contain">
+          <div class="info">
+            <p id="place">berlin</p>
+            <p id="date">thursday,aug 5 ,2026</p>
+          </div>
+          <p id="temp">20</p>
+        </div>
+      </div>
+
+      <div class="dv-contain">
+        <div class="block" >Feels like
+          <p id="Feels like"></p></div>
+        
+        <div class="block" >Humidity
+          <p id="Humidity"></p>
+        </div>
+        <div class="block" >Wind <p id="Wind"></p></div>
+        <div class="block" >Precipitation <p id="Precipitation"></p>
+        </div>
+      </div>
+
+      <p id="Daily-forecast">Daily forecast</p>
+      <div class="daily-contain">
+      </div>
+    </main>
+
+    <div class="hourly-forecast" aria-labelledby="hourly-title">
+      <div class="hourly-forecast__header">
+        <h2 id="hourly-title">Hourly forecast</h2>
+        <label class="visually-hidden" for="hourly-day">Choose forecast day</label>
+        <select id="hourly-day" name="hourly-day">
+          <option value="0">Tuesday</option>
+          <option value="1">Wednesday</option>
+          <option value="2">Thursday</option>
+          <option value="3">Friday</option>
+          <option value="4">Saturday</option>
+          <option value="5">Sunday</option>
+          <option value="6">Monday</option>
+        </select>
+      </div>
+
+      <ul class="hourly-list"></ul>
+    </div>
+  </div>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
